@@ -1,0 +1,69 @@
+.main {
+  padding: 2rem;
+  min-height: 100vh;
+  gap: 4rem;
+  flex-direction: column;
+  text-align: center;
+  .content {
+    width: min(800px, 100%);
+    margin-inline: auto;
+    background-color: white;
+  }
+
+  .grid2Cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 260px;
+    place-items: center;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+    border-radius: 24px;
+    margin-bottom: 2.4rem;
+
+  }
+  .square {
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0 2px 10px;
+  }
+  .input {
+    min-height: 36px;
+    min-width: 240px;
+    border-radius: 8px;
+    border: none;
+    padding-left: 4px;
+  }
+  .input:focus {
+    outline: none;
+  }
+
+  .switchContainer {
+    width: 100px;
+    height: 48px;
+    border-radius: 400px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4px;
+
+    .switch {
+      height: 100%;
+      width: 36px;
+      background-color: rgba(131, 58, 180, 1);
+      border-radius: 50%;
+    }
+    
+    &[data-isOn="true"] {
+      justify-content: flex-end;
+    }
+
+
+  }
+}
