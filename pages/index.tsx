@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.scss";
 import fonts from "../styles/Fonts.module.scss";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [move, setMove] = useState<boolean>(false);
@@ -21,24 +22,31 @@ export default function Home() {
 
       <main className={styles.main}>
         <motion.h1
-          animate={{ y: [-100, 0], opacity: [0, 1] }}
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
           className={fonts.title}
         >
           Framer Motion Demo
         </motion.h1>
         <motion.div
-          animate={{ y: [100, 0], opacity: [0, 1] }}
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           className={styles.content}
         >
+          {/* Hover & Tap */}
           <div className={styles.grid2Cols}>
-            <p className={fonts.sectionTitle}>Hover</p>
-            <motion.div
+            <p className={fonts.sectionTitle}>Hover &amp; Tap</p>
+            <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className={styles.square}
-            ></motion.div>
+              className={styles.button}
+            >
+              Click me!
+            </motion.button>
           </div>
 
+          {/* Focus on form */}
           <div className={styles.grid2Cols}>
             <p className={fonts.sectionTitle}>Focus</p>
             <motion.input
@@ -47,6 +55,7 @@ export default function Home() {
             ></motion.input>
           </div>
 
+          {/* Drag with constraints */}
           <div className={styles.grid2Cols}>
             <p className={fonts.sectionTitle}>Drag </p>
             <motion.div
@@ -56,6 +65,7 @@ export default function Home() {
             ></motion.div>
           </div>
 
+          {/* Toogle switch with state */}
           <div className={styles.grid2Cols}>
             <p className={fonts.sectionTitle}>Toggle Switch </p>
             <div
@@ -67,9 +77,17 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
+
+        <Link href="/animate">
+          <p className={fonts.link}>Animate Page</p>
+        </Link>
       </main>
 
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>
+        <Link href="/gallery">
+          <p className={fonts.footerLink}>Gallery</p>
+        </Link>
+      </footer>
     </div>
   );
 }

@@ -1,0 +1,35 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #afafaf;
+}
+
+.gallery {
+  margin-inline: auto;
+  position: relative;
+  min-width: 300px;
+  
+  .img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    translate: 0% -50%;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    cursor: pointer;
+    &Left {
+      left: -4rem;
+    }
+    &Right {
+        right: -4rem;
+        scale: -1;
+      }
+  }
+}
