@@ -24,7 +24,7 @@ export default function Home() {
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
           className={fonts.title}
         >
           Framer Motion Demo
@@ -32,6 +32,7 @@ export default function Home() {
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
           className={styles.content}
         >
           {/* Hover & Tap */}

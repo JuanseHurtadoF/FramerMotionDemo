@@ -4,7 +4,7 @@ import styles from "../styles/Gallery.module.scss";
 import fonts from "../styles/Fonts.module.scss";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const imageArray = [
